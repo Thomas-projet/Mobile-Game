@@ -6,6 +6,7 @@ public class Fireball : MonoBehaviour
 {
     private float speed = 5f;
     public Rigidbody2D rb;
+    public int damage = 40;
 
     [SerializeField]
     private GameManager GM;
@@ -29,6 +30,13 @@ public class Fireball : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log(hitInfo.name);
+
+        Enemy enemy = hitInfo.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+
         Destroy(gameObject);
         
     }
