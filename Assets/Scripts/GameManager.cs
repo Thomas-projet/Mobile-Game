@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject target;
     public GameObject enemy1;
     public GameObject enemy2;
+    public Transform fire_point;
 
     private void Awake()
     {

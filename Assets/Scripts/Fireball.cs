@@ -29,7 +29,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        Debug.Log(hitInfo.name);
+        Debug.Log("Fireball hiinfo : " + hitInfo.name);
 
         Enemy enemy = hitInfo.GetComponent<Enemy>();
         if (enemy != null)
