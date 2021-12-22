@@ -16,7 +16,7 @@ public class Fireball : MonoBehaviour
     void Start()
     {
         GM = FindObjectOfType<GameManager>();
-        target = GM.Enemy;
+        target = GM.target;
 
     }
 
