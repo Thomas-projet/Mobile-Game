@@ -796,6 +796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ff797f31c3ab64f856c4bc580d8a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1864126177}
   target: {fileID: 0}
   enemy1: {fileID: 1470371531}
   enemy2: {fileID: 1332993639}
@@ -1453,7 +1454,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7725513120697382535, guid: abd71638906fd614d88b2d420aeb7aef, type: 3}
   m_PrefabInstance: {fileID: 7105753533262991396}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1864126177}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98df99bb66d436c469edc5f1548e8daa, type: 3}
@@ -2840,6 +2841,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803517077}
   m_CullTransparentMesh: 1
+--- !u!1 &1864126177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7104464518274447411, guid: abd71638906fd614d88b2d420aeb7aef, type: 3}
+  m_PrefabInstance: {fileID: 7105753533262991396}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1880998148
 GameObject:
   m_ObjectHideFlags: 0
