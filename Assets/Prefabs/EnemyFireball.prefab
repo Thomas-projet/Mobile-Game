@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8222297599396745311}
   - component: {fileID: 2832691415697380501}
   - component: {fileID: 602277641129808525}
-  - component: {fileID: 4616919825641271297}
-  m_Layer: 7
-  m_Name: Fireball
+  - component: {fileID: 6945761709803922231}
+  m_Layer: 9
+  m_Name: EnemyFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8f369d3792514f84881dce1395f4e378, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 417540710ef7eaa41943a9b1f474011d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 2
---- !u!114 &4616919825641271297
+--- !u!114 &6945761709803922231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6202709226382426623}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98a1075b46de2164a81961ad889a5f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f82f396961f2284b9eb2fd2bbfb9160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 602277641129808525}
+  rb: {fileID: 0}
   damage: 40
   GM: {fileID: 0}

@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance;
+
+    public GameObject player;
     public GameObject target;
     public GameObject enemy1;
     public GameObject enemy2;

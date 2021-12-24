@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 916225435347166929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 7755896622372390630}
   - component: {fileID: 2053089183684092290}
   - component: {fileID: 7323694943292774491}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5625148759862764394}
   - component: {fileID: 7587390402966319159}
   - component: {fileID: 7426092822814504363}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +205,36 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6734902757897202797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5496717287211012715}
+  m_Layer: 8
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5496717287211012715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734902757897202797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.786, y: 0.015, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7102810124373471645}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7104456576648265447
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7101384062591281487}
   - component: {fileID: 6947081414061265549}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +331,7 @@ GameObject:
   - component: {fileID: 7190003513158007323}
   - component: {fileID: 8674097815801024601}
   - component: {fileID: 2304433183583037260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,6 +354,7 @@ Transform:
   - {fileID: 7103079226328472789}
   - {fileID: 916225435347166929}
   - {fileID: 4064268387920853603}
+  - {fileID: 5496717287211012715}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -361,6 +392,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 50
   healthBar: {fileID: 4148380627941211091}
+  fire_point: {fileID: 5496717287211012715}
+  fireball_prefab: {fileID: 6202709226382426623, guid: c6006b1a13bdbee46a4503ae50bc0089, type: 3}
 --- !u!61 &2304433183583037260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -397,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7102804561921352479}
   - component: {fileID: 6948805217591322511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7103044959383601305}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7101251695871829695}
   - component: {fileID: 6946994660864603729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -593,7 +626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7103223357522684793}
   - component: {fileID: 6948426850609778109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hat-Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7103079226328472789}
   - component: {fileID: 6947004609086944141}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -757,7 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7101369431900441645}
   - component: {fileID: 6948743928859136635}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon-Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -840,7 +873,7 @@ GameObject:
   - component: {fileID: 5829493176286392434}
   - component: {fileID: 5771302813832909673}
   - component: {fileID: 4148380627941211091}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +976,7 @@ GameObject:
   - component: {fileID: 7992065069185864144}
   - component: {fileID: 8963478185360880380}
   - component: {fileID: 7208013208383464338}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}

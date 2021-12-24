@@ -64,4 +64,23 @@ public class Player : MonoBehaviour
 
         }
     }
+
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+
+        healthBar.SetHealth(currentHealth);
+    }
+
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
 }
