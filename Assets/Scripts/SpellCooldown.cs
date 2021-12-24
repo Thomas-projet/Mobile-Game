@@ -11,8 +11,6 @@ public class SpellCooldown : MonoBehaviour
     [SerializeField]
     private Text text_CD;
 
-    public Button btn;
-
     public GameObject img;
 
 
@@ -26,7 +24,6 @@ public class SpellCooldown : MonoBehaviour
     {
         text_CD.gameObject.SetActive(false);
         image_CD.fillAmount = 0.0f;
-        btn.interactable = true;
         img.SetActive(false);
 
     }
@@ -50,7 +47,6 @@ public class SpellCooldown : MonoBehaviour
             is_on_CD = false;
             text_CD.gameObject.SetActive(false);
             image_CD.fillAmount = 0.0f;
-            btn.interactable = true;
             img.SetActive(false);
         }
         else
@@ -70,7 +66,6 @@ public class SpellCooldown : MonoBehaviour
         }
         else
         {
-            btn.interactable = false;
             img.SetActive(true);
             is_on_CD = true;
             text_CD.gameObject.SetActive(true);
