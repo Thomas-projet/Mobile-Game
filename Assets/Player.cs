@@ -43,13 +43,13 @@ public class Player : MonoBehaviour
         if (CD_timer < 0.0f)
         {
             is_on_CD = false;
-            animator.SetBool("Dodging", false);
+            animator.SetBool("blocking", false);
         }
 
     }
 
 
-    public void Use_Dodge()
+    public void Use_Block()
     {
         if (is_on_CD)
         {
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            animator.SetBool("Dodging", true);
+            animator.SetBool("blocking", true);
             is_on_CD = true;
             CD_timer = CD_time;
 
@@ -68,7 +68,11 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        if(!is_on_CD)
+        {
+            currentHealth -= damage;
+        }
+        
 
         if (currentHealth <= 0)
         {
