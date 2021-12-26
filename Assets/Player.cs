@@ -16,11 +16,14 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    private GameManager GM;
+
     // Start is called before the first frame update
     void Start()
     {
+        GM = FindObjectOfType<GameManager>();
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);       
+        healthBar.SetMaxHealth(maxHealth);
 
     }
 
@@ -41,6 +44,7 @@ public class Player : MonoBehaviour
 
         if (CD_timer < 0.0f)
         {
+            GM.player_is_using_a_skill = false;
             is_on_CD = false;
             animator.SetBool("blocking", false);
         }
@@ -56,6 +60,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            GM.player_is_using_a_skill = true;
             animator.SetBool("blocking", true);
             animator.SetBool("healing", false);
             is_on_CD = true;
@@ -67,7 +72,11 @@ public class Player : MonoBehaviour
 
     public void Use_Heal()
     {
-        animator.SetBool("healing", true);
+        if (!animator.GetBool("blocking"))
+        {
+            animator.SetBool("healing", true);
+        }
+        
     }
 
     public void Get_Healed()

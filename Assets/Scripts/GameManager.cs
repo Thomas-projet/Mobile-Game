@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject target;
     public GameObject enemy1;
     public GameObject enemy2;
-    public Transform fire_point;
+
+    public bool player_is_using_a_skill = false;
 
     private void Awake()
     {
