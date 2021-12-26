@@ -16,12 +16,11 @@ public class Player : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
-
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);       
 
     }
 
@@ -58,11 +57,25 @@ public class Player : MonoBehaviour
         else
         {
             animator.SetBool("blocking", true);
+            animator.SetBool("healing", false);
             is_on_CD = true;
             CD_timer = CD_time;
 
 
         }
+    }
+
+    public void Use_Heal()
+    {
+        animator.SetBool("healing", true);
+    }
+
+    public void Get_Healed()
+    {
+        Debug.Log("Stop_Heal");
+        currentHealth += 20;
+        healthBar.SetHealth(currentHealth);
+        animator.SetBool("healing", false);
     }
 
 
@@ -87,4 +100,9 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+
+
+
+
 }
