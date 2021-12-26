@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private Transform fire_point;
+    public Transform fire_point;
     public GameObject fireball_prefab;
 
 
@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         GM = FindObjectOfType<GameManager>();
-        fire_point = GM.fire_point;
     }
 
     public void set_target_to_first_enemy()
