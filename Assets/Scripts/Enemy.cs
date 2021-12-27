@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+	public Animator animator;
+
 	public int maxHealth = 100;
 	public int currentHealth;
 
@@ -15,6 +17,8 @@ public class Enemy : MonoBehaviour
 	private float CD_time = 2.0f;
 	private float CD_timer = 0.0f;
 
+	public bool stunned = false;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -25,7 +29,11 @@ public class Enemy : MonoBehaviour
 
 	void Update()
 	{
-		Use_Spell();
+        if (!stunned)
+        {
+			Use_Spell();
+		}
+		
 		if (is_on_CD)
 		{
 			Apply_CD();
@@ -74,4 +82,16 @@ public class Enemy : MonoBehaviour
 	{
 		Destroy(gameObject);
 	}
+
+	public void is_stunned()
+    {
+		stunned = true;
+		animator.SetTrigger("stunned");
+	}
+	public void unstun()
+    {
+		stunned = false;
+    }
+
+
 }

@@ -142,6 +142,16 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Stun_Event()
+    {
+        Enemy enemy1 = GM.enemy1.GetComponent<Enemy>();
+        Enemy enemy2 = GM.enemy2.GetComponent<Enemy>();
+
+        enemy1.is_stunned();
+        enemy2.is_stunned();
+
+    }
+
 
     public void Stun_Done()
     {
