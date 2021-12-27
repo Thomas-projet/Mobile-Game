@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
 
     private GameManager GM;
+    private GameObject target;
+
+    private float speed = 2f;
+
+    private bool is_attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,7 @@ public class Player : MonoBehaviour
         GM = FindObjectOfType<GameManager>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        target = GM.target;
 
     }
 
@@ -34,6 +40,12 @@ public class Player : MonoBehaviour
         if (is_on_CD)
         {
             Apply_CD();
+        }
+
+        if (is_attacking)
+        {
+            Vector2 dir = target.transform.position - transform.position;
+            transform.Translate(dir.normalized * speed * Time.deltaTime);
         }
     }
 
@@ -63,6 +75,7 @@ public class Player : MonoBehaviour
             GM.player_is_using_a_skill = true;
             animator.SetBool("blocking", true);
             animator.SetBool("healing", false);
+            animator.SetBool("stunning", false);
             is_on_CD = true;
             CD_timer = CD_time;
 
@@ -72,19 +85,49 @@ public class Player : MonoBehaviour
 
     public void Use_Heal()
     {
-        if (!animator.GetBool("blocking"))
-        {
+        animator.SetBool("stunning", false);
+        //if (!animator.GetBool("blocking"))
+        //{
             animator.SetBool("healing", true);
-        }
+        //}
         
     }
 
     public void Get_Healed()
     {
-        Debug.Log("Stop_Heal");
         currentHealth += 20;
         healthBar.SetHealth(currentHealth);
         animator.SetBool("healing", false);
+    }
+
+    public void Use_Stun()
+    {
+        animator.SetBool("healing", false);
+        if (!animator.GetBool("blocking"))
+        {
+            animator.SetBool("stunning", true);
+        }
+
+    }
+
+
+    public void Stun_Done()
+    {
+        Debug.Log("Stun_Done");
+        animator.SetBool("stunning", false);
+    }
+
+    public void Use_Attack()
+    {
+        animator.SetBool("healing", false);
+        animator.SetBool("stunning", false);
+        is_attacking = true;
+
+        //if (!animator.GetBool("blocking"))
+        //{
+        //    animator.SetBool("attack", true);
+        //}
+
     }
 
 
