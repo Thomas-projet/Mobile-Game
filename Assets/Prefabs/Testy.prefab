@@ -533,6 +533,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 5485155815761052270}
+  lookRadius: 1.2
 --- !u!114 &983869995189671352
 MonoBehaviour:
   m_ObjectHideFlags: 0

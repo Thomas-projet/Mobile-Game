@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Attack
       objectReference: {fileID: 0}
+    - target: {fileID: 1954366595251041751, guid: 056097a6dcd40b043b6dbde1eb176c8d, type: 3}
+      propertyPath: instant_skill
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1954366595475961260, guid: 056097a6dcd40b043b6dbde1eb176c8d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

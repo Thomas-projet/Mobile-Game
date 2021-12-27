@@ -23,20 +23,26 @@ public class Player : MonoBehaviour
 
     private bool is_attacking = false;
 
+
+    private Vector2 initial_position;
+    private float lookRadius = 1.2f;
+
     // Start is called before the first frame update
     void Start()
     {
+        
         GM = FindObjectOfType<GameManager>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         target = GM.target;
+        initial_position = transform.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        target = GM.target;
         if (is_on_CD)
         {
             Apply_CD();
@@ -44,8 +50,19 @@ public class Player : MonoBehaviour
 
         if (is_attacking)
         {
-            Vector2 dir = target.transform.position - transform.position;
-            transform.Translate(dir.normalized * speed * Time.deltaTime);
+            
+            float distance = Vector2.Distance(target.transform.position, transform.position);
+            
+            if (distance <= lookRadius)
+            {
+                animator.SetBool("attacking", true);
+
+            }
+            else
+            {
+                Vector2 dir = target.transform.position - transform.position;
+                transform.Translate(dir.normalized * speed * Time.deltaTime);
+            }
         }
     }
 
@@ -63,6 +80,19 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Attack_event()
+    {
+        is_attacking = false;
+        animator.SetBool("attacking", false);
+        transform.position = initial_position;
+    }
+
+    public void Attack_damage()
+    {
+        Enemy enemy = GM.target.GetComponent<Enemy>();
+        enemy.TakeDamage(50);
+    }
+
 
     public void Use_Block()
     {
@@ -74,6 +104,8 @@ public class Player : MonoBehaviour
         {
             GM.player_is_using_a_skill = true;
             animator.SetBool("blocking", true);
+            animator.SetTrigger("test");
+
             animator.SetBool("healing", false);
             animator.SetBool("stunning", false);
             is_on_CD = true;
@@ -122,6 +154,7 @@ public class Player : MonoBehaviour
         animator.SetBool("healing", false);
         animator.SetBool("stunning", false);
         is_attacking = true;
+        animator.SetTrigger("charging");
 
         //if (!animator.GetBool("blocking"))
         //{
@@ -154,7 +187,12 @@ public class Player : MonoBehaviour
     }
 
 
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
 
+    }
 
 
 }
