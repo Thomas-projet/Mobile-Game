@@ -32,9 +32,6 @@ public class Weapon : MonoBehaviour
     {
         Debug.Log("use_fireball");
         Instantiate(fireball_prefab, fire_point.position, fire_point.rotation, GameObject.FindGameObjectWithTag("Canvas").transform);
-        
-
-
     }
 
 }

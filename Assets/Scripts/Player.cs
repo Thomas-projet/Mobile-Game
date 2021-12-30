@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     private Vector2 initial_position;
     private float lookRadius = 1.2f;
 
+    public Transform fire_point;
+
     // Start is called before the first frame update
     void Start()
     {
